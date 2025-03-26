@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alejandro Valtierra | Portfolio</title>
+    <link rel="stylesheet" href="static/styles/base.css">
+    <script src="static/scripts/base.js" defer></script>
+    <script src="static/scripts/canvas.js" defer></script>
+    <script src="static/scripts/copy.js" defer></script>
+</head>
+<body>
+    <noscript>
+        <div><img src="static/icons/warning.png" alt="Señal de advertencia"></div>
+        <p><b>¡JavaScript está desactivado!</b><br>Es importante activar JavaScript para ver correctamente el contenido.</p>
+        <div><img src="static/icons/warning.png" alt="Señal de advertencia"></div>
+    </noscript>
+
+    <div class="container">
+        <div class="circle" id="circle"></div>
+        <canvas id="field" class="field"></canvas>
+    </div>
+    <div class="main-view">
+        <nav id="nav">
+            <ul id="mainList">
+                <li class="cross-space"><span id="cross">&#x3A7;</span></li>
+                <li><a href="#me">Yo</a></li>
+                <li>
+                    <a href="#development-diaries">Diarios de desarrollo</a>
+                    <ul>
+                        <li><a href="#sql">SQL</a></li>
+                        <li><a href="#html-and-css">HTML y CSS</a></li>
+                        <li><a href="#python">Python</a></li>
+                        <li><a href="#c">C++</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#works">Trabajos</a>
+                    <ul>
+                        <li><a href="#dungeon-guide">Guía de la mazmorra</a></li>
+                        <li><a href="#talking-recursively">Hablando recursivo</a></li>
+                        <li><a href="#saving-passwords">Guardando contraseñas</a></li>
+                        <li><a href="#paper-and-newspaper">Papel y periódico</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <button id="sideNavButton" type="button"><span>&gt;</span></button>
+        </nav>
+        <main>
+            <section>
+                <h1 id="me">Alejandro Valtierra</h1>
+                <div class="text-and-image">
+                    <div class="image-part">
+                        <div>
+                            <img id="me-photo" src="./static/images/yo.png" alt="Imagen de Alejandro Valtierra. Sentado en una silla con camiseta negra se ve del torso hasta la cabeza. Pelo rizado y oscuro, con gafas y ojos marrones, labios carnosos, barba muy corta y sonriendo.">
+                        </div>
+                    </div>
+                    <div class="text-part">
+                        <p class="text"><img class="icon" src="./static/icons/pc.png" alt="Pantalla de computador con una color verde de fondo y los literales '> _' en blanco en el medio del cristal."> Ingeniero informático y de computadores (URJC <img class="icon" src="./static/icons/urjc.png" alt="Logo Universidad Rey Juan Carlos, una 'u' blanca con una corona simplificada encima compuesta de círculos y rayas.">)<br> <img class="icon" src="./static/icons/spain.png" alt="Mapa de España sin las Islas Canarias y coloreado con la bandera de España y el escudo en la franja amarilla."> Madrid, España</p>
+                        <h3>Experiencia</h3>
+                        <ul>
+                            <li>(12/2024 - Actualidad) <a href="https://www.csic.es/es">CSIC <img class="icon" src="./static/icons/csic.png" alt="Logo del CSIC en el que se encuentra dibujado en gris un árbol envuelto en cintas."></a> como desarrollador de <i>software</i></li>
+                            <li>(08/2024 - 12/2024) <a href="https://www.indracompany.com/">Indra <img class="icon" src="./static/icons/indra.jpg" alt="Logo de Indra en el que se ve las letras de indra En verde sobre un fondo blanco."></a> como desarrollador de <i>software</i></li>
+                            <li>(07/2022 - 08/2024) <a href="https://nersis.es/">Nersis <img class="icon" src="./static/icons/nersis.png" alt="Logo del mundo hecho como si fuese una red en azul sobre un fondo blanco."></a> como desarrollador de <i>software</i></li>
+                        </ul>
+                        <h3>Intereses en el trabajo</h3>
+                        <ul>
+                            <li>Optimización de algoritmos y operaciones</li>
+                            <li>Ciberseguridad (Descubrir vulnerabilidades)</li>
+                            <li>Inteligencia artificial (Deep learning)</li>
+                            <li>Múltiples lenguajes (C, C++, Python, JavaScript, HTML y CSS)</li>
+                            <li>Desarrollo de aplicaciones web</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h1 id="development-diaries">Diarios de desarrollo</h1>
+                <p class="text">¡Hola! En esta sección podrás encontrar algunas pequeñas píldoras de desarrollos interesantes que pueden ayudarte a mejorar algunos de tus desarrollos o hacer que sean más eficientes o bonitos. ¡Porque los detalles importan!</p>
+                <article>
+                    <h2 id="sql">SQL</h2>
+                    <div class="sub-article">
+                        <h3>Índices</h3>
+                        <p class="text"></p>
+                    </div>
+                    <div class="sub-article">
+                        <h3>¿Criptografía por defecto?</h3>
+                        <p class="text"></p>
+                    </div>
+                </article>
+                <article>
+                    <h2 id="html-and-css">HTML y CSS</h2>
+                    <p class="text">Cómo recordatorio, toda esta página está hecha con HTML, CSS y JavaScript. Por lo que puedes darte una vuelta por las entrañas o copiarla para ver como están hechas las animaciones y estilos.</p>
+                    <div class="sub-article">
+                        <h3>nav, body y footer</h3>
+                        <p class="text">Uno de los mayores problemas gráficos que se pueden encontrar en páginas es el <i>footer</i>, cuando el contenido es poco el <i>footer</i> en vez de estar en la parte inferior de la pantalla, quedará en medio de la misma. Además la solución es inmensamente sencilla, unas pocas líneas de CSS. Primero tendremos que indicar que el body tenga como tamaño mínimo la altura completa de la pantalla, luego utilizaremos un <i>flex</i> con dirección columna para que se propaguen a lo largo del espacio. Finalmente utilizaremos "flex: 1" para indicar que el elemento principal "crezca" y ocupe todo el espacio posible.</p>
+                        <div class="code-container">
+                            <div class="code">
+                                <div class="nav-code">
+                                    <h4>CSS</h4>
+                                    <button type="button" onclick="copyToClipboard('html-and-css-code')">Copiar</button>
+                                </div>
+                                <pre id="html-and-css-code">
+&lt!DOCTYPE html&gt
+&lthtml&gt
+&lthead&gt
+    &ltstyle&gt
+        body {
+            display: flex;
+            flex-direction: column; 
+            min-height: 100vh;
+
+            background-color: white;
+            margin: 0;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        nav {
+            background-color: rgba(255, 0, 0, 0.3);
+        }
+
+        footer {
+            background-color: rgba(0, 255, 0, 0.3);
+        }
+    &lt/style&gt
+&lt/head&gt
+&ltbody&gt
+    &ltnav&gtSoy la barra de navegación&lt/nav&gt
+    &ltmain&gtSoy el cuerpo&lt/main&gt
+    &ltfooter&gtSoy el pie de página&lt/footer&gt
+&lt/body&gt
+&lt/html&gt</pre>
+                            </div>
+                            <iframe srcdoc="<head><style>body {display: flex;flex-direction: column; min-height: 100vh;background-color: white;margin: 0;}main {flex: 1;}nav {background-color: rgba(255, 0, 0, 0.3);}footer {background-color: rgba(0, 255, 0, 0.3);}</style></head><body><nav>Soy la barra de navegación</nav><main>Soy el cuerpo</main><footer>Soy el pie de página</footer></body>" frameborder="0" sandbox></iframe>
+                        </div>
+                    </div>
+                    <div class="sub-article">
+                        <h3>flex</h3>
+                        <p class="text">¿Por qué deberías usar flex?</p>
+                    </div>
+                    <div class="sub-article">
+                        <h3>Transiciones</h3>
+                        <p class="text">Las transiciones son un elemento muy importante del diseño web, porque mejoran mucho la experiencia del usuario, frente a un comportamiento funcional pero robótico. Para ello se utilizan las propiedades de la transición: indicando sobre que propiedades se va a trabajar, en el ejemplo, sobre la propiedad transform, pero se puede casi cualquier cosa; luego el tiempo que va a durar la animación en completarse, a continuación el tipo de función de tiempo, que indica la distribución de la animación a lo largo del tiempo, en el ejemplo que tarde un poquito más en comenzar y acabe más rápido; y finalmente el tiempo que va a tardar en comenzar la animación, en el ejemplo de forma inmediata. Con ello podemos ver que el botón izquierdo tiene un comportamiento más natural que el derecho ;D</p>
+                        <div class="code-container">
+                            <div class="code">
+                                <div class="nav-code">
+                                    <h4>CSS</h4>
+                                    <button type="button" onclick="copyToClipboard('html-and-css-code')">Copiar</button>
+                                </div>
+                                <pre id="html-and-css-code">
+&lt!DOCTYPE html&gt
+&lthtml&gt
+&lthead&gt
+    &ltstyle&gt
+        body {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            margin: 0;
+        }
+
+        .button1 {
+            background-color: rgba(255, 0, 0, 0.3);
+            transition-property: transform;
+            transition-duration: 1s;
+            transition-timing-function: ease-in;
+            transition-delay: 0s;
+            /* transition: transform 1s ease-in 0s; */
+            padding: 1rem;
+        }
+
+        .button2 {
+            background-color: rgba(0, 255, 0, 0.3);
+            padding: 1rem;
+        }
+
+        .button1:hover {
+            transform: rotate(-45deg);
+        }
+
+        .button2:hover {
+            transform: rotate(-45deg);
+        }
+
+    &lt/style&gt
+&lt/head&gt
+&ltbody&gt
+    &ltbutton type="button" class="button1"&gtMouse over&lt/button&gt
+    &ltbutton type="button" class="button2"&gtMouse over&lt/button&gt
+&lt/body&gt
+&lt/html&gt</pre>
+                            </div>
+                            <iframe srcdoc="<head><style>body {background-color:white;display: flex;justify-content: space-around;align-items: center;height: 100vh;width: 100vw;margin: 0;}.button1 {background-color: rgba(255, 0, 0, 0.3);transition-property: transform;transition-duration: 1s;transition-timing-function: ease-in;transition-delay: 0s;padding: 1rem;}.button2 {background-color: rgba(0, 255, 0, 0.3);padding: 1rem;}.button1:hover {transform: rotate(-45deg);}.button2:hover {transform: rotate(-45deg);}</style></head><body><button type='button' class='button1'>Mouse over</button><button type='button' class='button2'>Mouse over</button></body>" frameborder="0" sandbox></iframe>
+                        </div>
+                    </div>
+                    <div class="sub-article">
+                        <h3>Animaciones</h3>
+                        <p class="text"></p>
+                    </div>
+                </article>
+                <article>
+                    <h2 id="python">Python</h2>
+                    <div class="sub-article">
+                        <h3>Compresión de listas</h3>
+                        <p class="text"></p>
+                    </div>
+                    <div class="sub-article">
+                        <h3>Type hints</h3>
+                        <p class="text"></p>
+                    </div>
+                    <div class="sub-article">
+                        <h3>Regex fácil</h3>
+                        <p class="text"></p>
+                    </div>
+                    <div class="sub-article">
+                        <h3>Funciones como argumentos</h3>
+                        <p class="text"></p>
+                    </div>
+                </article>
+                <article>
+                    <h2 id="c">C++</h2>
+                    <div class="sub-article">
+                        <h3>Vectores, arrays y listas</h3>
+                        <p class="text"></p>
+                    </div>
+                    <div class="sub-article">
+                        <h3>Mapas</h3>
+                        <p class="text"></p>
+                    </div>
+                </article>
+            </section>
+            <section>
+                <h1 id="works">Trabajos</h1>
+                <p class="text"></p>
+                <article>
+                    <h2 id="dungeon-guide">Guía de la mazmorra</h2>
+                    <p class="text"></p>
+                </article>
+                <article>
+                    <h2 id="talking-recursively">Hablando recursivo</h2>
+                    <p class="text"></p>
+                </article>
+                <article>
+                    <h2 id="saving-passwords">Guardando contraseñas</h2>
+                    <p class="text"></p>
+                </article>
+                <article>
+                    <h2 id="paper-and-newspaper">Papel y periódico</h2>
+                    <p class="text"></p>
+                </article>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <div id="useful-data">
+            <section class="images first">
+                <img src="./static/icons/madeline.ico" class="game-icon first" alt="Madeline (Celeste video game) idle animation">
+                <img src="./static/icons/rathalos.ico" class="game-icon last" alt="Rathalos (Monster Hunter video game) sprite">
+            </section>
+            <section class="data">
+                <div>
+                    <h3>Enlaces</h3>
+                    <p><a href="#" target="_blank"><img src="./static/icons/linkedin.png" class="icon" alt="Linkedin icon"> Linkedin</a></p>
+                    <p><a href="#" target="_blank"><img src="./static/icons/github.png" class="icon" alt="GitHub icon"> GitHub</a></p>
+                </div>
+                <div>
+                    <h3>Imágenes</h3>
+                    <p><a href="#" target="_blank">Derechos</a></p>
+                </div>
+            </section>
+            <section class="images last">
+                <img src="./static/icons/mago_oscuro.ico" class="game-icon first" alt="dark mage (Final Fantasy video game) sprite">
+                <img src="./static/icons/pikachu.ico" class="game-icon last" alt="Pikachu (Pokemon video game) sprite">
+            </section>
+        </div>
+        <section class="copyright">© Copyright 2025 Alejandro Valtierra. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</section>
+    </footer>
+</body>
+</html>
