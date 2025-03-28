@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diario de desarrollo | Alejandro Valtierra Portfolio</title>
+    <link rel="stylesheet" href="static/styles/base.css">
+    <script src="static/scripts/base.js" defer></script>
+    <script src="static/scripts/canvas.js" defer></script>
+    <script src="static/scripts/copy.js" defer></script>
+</head>
+<body>
+    <noscript>
+        <div><img src="static/icons/warning.png" alt="Señal de advertencia"></div>
+        <p><b>¡JavaScript está desactivado!</b><br>Es importante activar JavaScript para ver correctamente el contenido.</p>
+        <div><img src="static/icons/warning.png" alt="Señal de advertencia"></div>
+    </noscript>
+
+    <div class="container">
+        <div class="circle" id="circle"></div>
+        <canvas id="field" class="field"></canvas>
+    </div>
+    <div class="main-view">
+        <nav id="nav">
+            <ul id="main-list">
+                <li class="cross-space"><span id="cross">&#x3A7;</span></li>
+                <li>
+                    <a href="./index.html#me">Alejandro Valtierra</a>
+                    <ul>
+                        <li class="sub-list"><a href="./index.html#biography">Biografía</a></li>
+                        <li class="sub-list"><a href="./index.html#structure">Estructura del portfolio</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#development-diaries">Diarios de desarrollo</a>
+                    <ul>
+                        <li class="sub-list"><a href="#sql">SQL</a></li>
+                        <li class="sub-list"><a href="#html-and-css">HTML y CSS</a></li>
+                        <li class="sub-list"><a href="#python">Python</a></li>
+                        <li class="sub-list"><a href="#c">C++</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="./works.html#works">Trabajos</a>
+                    <ul>
+                        <li class="sub-list"><a href="./works.html#dungeon-guide">Guía de la mazmorra</a></li>
+                        <li class="sub-list"><a href="./works.html#talking-recursively">Hablando recursivo</a></li>
+                        <li class="sub-list"><a href="./works.html#saving-passwords">Guardando contraseñas</a></li>
+                        <li class="sub-list"><a href="./works.html#paper-and-newspaper">Papel y periódico</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <button id="sideNavButton" type="button"><span>&gt;</span></button>
+        </nav>
+        <main>
+            <section>
+                <h1 id="development-diaries">Diarios de desarrollo</h1>
+                <p class="text">¡Hola! En esta sección podrás encontrar algunas pequeñas píldoras de desarrollos interesantes que pueden ayudarte a mejorar algunos de tus desarrollos o hacer que sean más eficientes o bonitos. ¡Porque los detalles importan!</p>
+                <article>
+                    <h2 id="sql">SQL</h2>
+                    <p class="text">La importancia de los datos es indubable hoy en día, dado que es necesario almacenar una gran cantidad de información. Esta información se puede guardar en nuestros dispositivos utilizando un sistema de ficheros o en servidores, mediante el almacenamiento en bases de datos. En este segundo caso, existen varios tipos, uno de ellos son las bases de datos relacionales, que agrupan los datos en forma de tablas, cada una con sus propios campos y "relacionandolas" (de aquí viene el nombre) entre sí. ¿Y cómo se usan?, pues utilizando un lenguaje conocido como SQL, el cual podemos hacer que haga muchas cosas, pero más importante aún, hay que saber cuándo y cómo.</p>
+                    <div class="sub-article">
+                        <h3>Índices</h3>
+                        <p class="text">Los índices son un componente de las bases de datos SQL que se ocupan de crear automáticamente unas estadísticas de aparición y repetición mediante agrupaciones de conjuntos; esto permite a la base de datos que cuando hagamos una consulta, por ejemplo, dame todas las personas que se llaman Maribel, o, dame todas las personas que tengan 25 años; la base de datos consultará estas estadísticas y buscará en los lugares donde exista mayor probabilidad de aparición de esos datos, resultando en búsquedas más eficientes y rápidas.</p>
+                        <p class="text">Hasta ahora todo parece un camino de rosas, pero... ¿Estamos seguros de ello?, una de las máximas de la informática es que si quieres eficiencia en algo es altamente probable que la pierdas en otro lugar, y en este caso no es una excepción, porque... ¿Y estás estadísticas dónde están? En efecto, tenemos que guardarlas en algún sitio, y ese sitio va a ser la base de datos y por tanto nos van a ocupar más espacio.</p>
+                        <p class="text">Entonces, ¿cómo decido? Pues muy fácil, si vas a tener una base de datos pequeña no te interesa, si va a ser muy grande te interesan, pero recuerda, vas a tener que tener muy claro cuáles van a ser los campos por los que más se buscan, porque si buscamos por nombre y no por edad no nos interesa ponerle un índice a la última pero si al nombre.</p>
+                        <p class="text">Referencias: <a href="https://www.sqlshack.com/es/vision-general-y-estrategias-de-indices-sql/">Visión general y estrategias de índices SQL</a></p>
+                        <div class="code-container">
+                            <div class="code">
+                                <div class="nav-code">
+                                    <h4>html</h4>
+                                    <button type="button" onclick="copyToClipboard(this)">Copiar</button>
+                                </div>
+                                <pre>CREATE TABLE Person
+(NAME    VARCHAR(20) NOT NULL PRIMARY KEY, 
+ AGE INTEGER,
+ INDEX SHORT_DESC_IND(AGE)
+);</pre>
+                            </div>
+                            <iframe srcdoc="<!DOCTYPE html><html><head><style>body {display: flex;flex-direction: row;justify-content: space-around;align-items: center;flex-wrap: wrap;gap: 1rem;height: 100vh;margin: 0;}table {border-collapse: collapse;width: 100%;}td {border: 1px solid black;padding: 0.5rem;}thead {background-color: rgba(0, 0, 0, 0.15);}</style></head><body><table><thead><tr><td>Name</td><td>Age</td></tr></thead><tbody><tr><td>Maribel</td><td>25</td></tr><tr><td>Laura</td><td>30</td></tr><tr><td>Daniel</td><td>25</td></tr><tr><td>Rosa</td><td>35</td></tr><tr><td>Felipe</td><td>45</td></tr></tbody></table></body></html>" frameborder="0" sandbox></iframe>
+                        </div>
+                    </div>
+                    <div class="sub-article">
+                        <h3>¿Criptografía por defecto?</h3>
+                        <p class="text">Para desgracia de todos nosotros, no vivimos en un mundo en el que la gente posea un código ético estricto con respecto a los demás y por supuesto su información. Por ello el mundo informático se ve constantemente obligado a seecurizar sus sistemas para impedir que personas no deseadas se hagan con la información que no deben tener. Para ello una de las principales técnicas se basa en el uso de criptografía. Es una técnica que se ocupa de convertir los datos en información cifrada y por tanto no entendible, ¿y cómo hacemos esto?, en efecto, lo has adivinado, con la ayuda de nuestras mejor amigas, las matemáticas. Utilizamos formulas matemáticas para "ocultar" la información y mediante claves poder revertirla a lo que nos interesa conocer.</p>
+                        <p class="text">Las bases de datos SQL tienen la posibilidad de encriptarse por defecto, lo cual nos da grandes ventajas, por ejemplo, tendremos la seguridad de que todos nuestros datos estén encriptados incluso en el caso de que alguien pueda mirar en la base de datos, solo verá cosas sin sentido. Pero... (porque en la informática siempre hay peros), la base de datos va a tener incluso más problemas de rendimiento, porque ahora va a tener que que realizar procesamiento adicional para poder revelar los datos, además de que tendremos que ocultar las claves para que no las vea cualquiera y tiremos por tierra todo porque sea capaz de ver el contenido. No solo eso, ¿cómo hacemos la comunicación de los datos?, si ya la hemos desencriptado, tenemos que hacersela llegar a quien la ha pedido, ¿la volvemos a encriptar para enviarla? ¿No os parece redundante? Pero entonces... ¿Cuál es la solución?</p>
+                        <p class="text">¿Y si en vez de hacerlo en la base de datos lo hacemos en la aplicación? En ese caso no vamos a tener que realizar esa redundancia y ganamos la eficiencia de que ahora la base de datos si que va a saber que busca, además de que podemos decirle que queremos que cifre y que no. Pero... Seguro que ya lo esperabais. La aplicación va a ser ahora la encargada, así que si se compromete la aplicación también se podrían comprometer los datos, además de que es más trabajo de desarrollo. Pero... (tranquilos que es la última ;D), estos problemas son mucho más sencillos de manejar, al final es mucho más eficiente porque la base de datos puede hacer su trabajo sin tener que hacer más operaciones adicionales. Por lo que en general te va a interesar mucho más que sea la aplicación la que maneje estos datos, aunque es más trabajo de desarrollo pero merece la pena. Recuerda mantener bien ocultas las claves y no uses 1234 ;D.</p>
+                        <p class="text">Referencias: <a href="https://learn.microsoft.com/es-es/sql/relational-databases/security/encryption/sql-server-encryption?view=sql-server-ver16">Cifrado de SQL Server - SQL Server | Microsoft Learn</a></p>
+                        <div class="code-container">
+                            <div class="code">
+                                <div class="nav-code">
+                                    <h4>html</h4>
+                                    <button type="button" onclick="copyToClipboard(this)">Copiar</button>
+                                </div>
+                                <pre>CREATE TABLE Person
+(NAME    VARCHAR(20) NOT NULL PRIMARY KEY, 
+ AGE INTEGER,
+ INDEX SHORT_DESC_IND(AGE)
+);</pre>
+                            </div>
+                            <iframe srcdoc="<!DOCTYPE html><html><head><style>body {display: flex;flex-direction: row;justify-content: space-around;align-items: center;flex-wrap: wrap;gap: 1rem;height: 100vh;margin: 0;}table {border-collapse: collapse;width: 100%;}td {border: 1px solid black;padding: 0.5rem;}thead {background-color: rgba(0, 0, 0, 0.15);}</style></head><body><table><thead><tr><td>Name</td><td>Password</td></tr></thead><tbody><tr><td>kapsd</td><td>fjdsoa</td></tr><tr><td>fdsapfiso</td><td>fasodpfa</td></tr><tr><td>eiosajfdi</td><td>2esae5</td></tr><tr><td>asdf</td><td>3pasoad</td></tr><tr><td>i9v8ae</td><td>asdfjao25</td></tr></tbody></table></body></html>" frameborder="0" sandbox></iframe>
+                        </div>
+                    </div>
+                </article>
+                <article>
+                    <h2 id="html-and-css">HTML y CSS</h2>
+                    <p class="text">¿Sabes como funciona lo que estás leyendo? Todo comienza con los 1s y 0s, ¡El binario!. ¡No, no te vayas!, mejor lo dejamos para otra ocasión. Estás leyendo HTML y CSS, que es como funcionan la mayoría de páginas web. HTML es un lenguaje de etiquetas que tu escribes y luego un navegador entiende como tiene que distribuir para que puedas leerlo. Mientras que CSS se ocupa de que lo veas bonito... o distinto, según tus gustos y preferencias. ¿Por qué se estará moviendo el fondo?, vamos a averiguarlo.</p>
+                    <p class="text">Cómo recordatorio, toda esta página está hecha con HTML, CSS y JavaScript puros. Por lo que puedes darte una vuelta por las entrañas o copiarla para ver como está hecho todo el contenido, también puedes encontar el proyecto en <a href="https://github.com/AlejandroVLDev/AlejandroVLDev.github.io" target="_blank"></a>GitHub - AlejandroVLDev/AlejandroVLDev.github.io</p>.
+                    <div class="sub-article">
+                        <h3>nav, body y footer</h3>
+                        <p class="text">Uno de los mayores problemas gráficos que se pueden encontrar en páginas es el "<i>footer</i>"", cuando el contenido es poco el <i>footer</i> en vez de estar en la parte inferior de la pantalla, quedará en medio de la misma. Además la solución es inmensamente sencilla, unas pocas líneas de CSS. Primero tendremos que indicar que el body tenga como tamaño mínimo la altura completa de la pantalla, luego utilizaremos un <i>flex</i> con dirección columna para que se propaguen a lo largo del espacio. Finalmente utilizaremos "<i>flex</i>: 1" para indicar que el elemento principal "crezca" y ocupe todo el espacio posible.</p>
+                        <div class="code-container">
+                            <div class="code">
+                                <div class="nav-code">
+                                    <h4>html</h4>
+                                    <button type="button" onclick="copyToClipboard(this)">Copiar</button>
+                                </div>
+                                <pre>
+&lt!DOCTYPE html&gt
+&lthtml&gt
+&lthead&gt
+    &ltstyle&gt
+        body {
+            display: flex;
+            flex-direction: column; 
+            min-height: 100vh;
+
+            
+            margin: 0;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        nav {
+            background-color: rgba(255, 0, 0, 0.3);
+        }
+
+        footer {
+            background-color: rgba(0, 255, 0, 0.3);
+        }
+    &lt/style&gt
+&lt/head&gt
+&ltbody&gt
+    &ltnav&gtSoy la barra de navegación&lt/nav&gt
+    &ltmain&gtSoy el cuerpo&lt/main&gt
+    &ltfooter&gtSoy el pie de página&lt/footer&gt
+&lt/body&gt
+&lt/html&gt</pre>
+                            </div>
+                            <iframe srcdoc="<head><style>body {display: flex;flex-direction: column; min-height: 100vh;margin: 0;}main {flex: 1;}nav {background-color: rgba(255, 0, 0, 0.3);}footer {background-color: rgba(0, 255, 0, 0.3);}</style></head><body><nav>Soy la barra de navegación</nav><main>Soy el cuerpo</main><footer>Soy el pie de página</footer></body>" frameborder="0" sandbox></iframe>
+                        </div>
+                    </div>
+                    <div class="sub-article">
+                        <h3>flex</h3>
+                        <p class="text">¿Por qué deberías usar flex? Porque es una de las propiedades más útiles que se han añadido. Nos va a permitir estructurar una página para que tenga un comportamiento automático más agradable para el usuario, permitiendonos agrupar o centrar sin tener que calcular nosotros absolutamente nada. Además de que gracias a estas propiedades podremos definir un comportamiento que funcione para cualquier pantalla con independencia del tamaño (que no se te olviden las "<i>media queries</i>" ;D).</p>
+                        <ul>
+                            <li><b>display: flex;</b> es la propiedad que tenemos que poner para que un elemento tenga esta característica.</li>
+                            <li><b>flex-direction</b>: Esta propiedad indica la dirección del contenido, ya sea que los elementos se apilen en una columna o que se apilen a lo largo de la fila.</li>
+                            <li><b>justify-content</b>: Esta propiedad nos va a indicar la distribución del contenido dentro del contenedor, algunos ejemplos son: "<i>flex-start</i>" (todos agrupados al principio), "<i>flex-end</i>" (todos agrupados al final), "<i>center</i>" (todos agrupados al centro), "<i>space-between</i>" (todos para dentr..., digo vamos dejar el mismo espacio entre ellos) y "<i>space-around</i>" (todos tengan la misma distancia a izquierda y derecha).</li>
+                            <li><b>gap</b>: Esta propiedad nos va a indicar el espacio mínimo entre los elementos, para que siempre haya separación entre ellos y no se peguen, ¡recordad poneros la mascarilla!</li> 
+                            <li><b>align-items</b>: Esta propiedad nos va a indicar la alineación (vertical en línea y horizontal en columna) del contenido dentro del contenedor, algunos ejemplos son: "<i>start</i>" (todos pegados a la arriba o izquierda respectivamente a línea o columna), "<i>end</i>" (todos alineados abajo o derecha, respectivamente como antes), "<i>center</i>" (todos alineados al centro) y "<i>stretch</i>" (todos crezcan hasta tocar arriba y abajo en lína y izquierda y derecha en columna).</li>
+                            <li><b>flex-wrap</b>: Con esta propiedad podemos indicar si los elementos se van a apilar en una sola línea o en varias líneas, de modo que si no caben todos porque ocupan mucho vayan pasando a la siguiente fila.</li>
+                            <li><b>flex-grow</b>: Esta propiedad es muy intersante para los elementos del propio contenido, con ella indicaremos cuanto queremos que ocupe. Por ejemplificarlo, si ponemos un 2 al primero este ocupara el doble que los siguientes, si ponemos un 3, el triple, y así sucesivamente.</li>
+                        </ul>
+                        <div class="code-container">
+                            <div class="code">
+                                <div class="nav-code">
+                                    <h4>html</h4>
+                                    <button type="button" onclick="copyToClipboard(this)">Copiar</button>
+                                </div>
+                                <pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;style&gt;
+		body {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			align-items: center;
+			flex-wrap: wrap;
+			gap: 1rem;
+			height: 100vh;
+			width: 100vw;
+			margin: 0;
+		}
+
+		div {
+			padding: 1rem;
+			text-align: center;
+			margin: 1rem;
+		}
+
+		.red {
+			background-color: rgba(255, 0, 0, 0.3);
+			flex-grow: 2;
+		}
+
+		.green {
+			background-color: rgba(0, 255, 0, 0.3);
+			flex-grow: 1;
+		}
+	&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;div class="red fast"&gt;x2&lt;/div&gt;
+	&lt;div class="green slow"&gt;/2&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+                            </div>
+                            <iframe srcdoc="<!DOCTYPE html><html><head><style>body {display: flex;flex-direction: row;justify-content: space-around;align-items: center;flex-wrap: wrap;gap: 1rem;height: 100vh;width: 100vw;margin: 0;}div {padding: 1rem;text-align: center;margin: 1rem;}.red {background-color: rgba(255, 0, 0, 0.3);flex-grow: 2;}.green {background-color: rgba(0, 255, 0, 0.3);flex-grow: 1;}</style></head><body><div class='red fast'>x2</div><div class='green slow'>/2</div></body></html>" frameborder="0" sandbox></iframe>
+                        </div>
+                    </div>
+                    <div class="sub-article">
+                        <h3>Transiciones</h3>
+                        <p class="text">Las transiciones son un elemento muy importante del diseño web, porque mejoran mucho la experiencia del usuario, frente a un comportamiento funcional pero robótico. Para ello se utilizan las propiedades de la transición:</p>
+                        <ul>
+                            <li><b>transition-property</b>: Esta propiedad indica sobre que propiedades del objeto vamos a realizar la transición, en el ejemplo, sobre la propiedad "<i>transform</i>", pero se puede sobre casi cualquier propiedad, o incluso todas con un "<i>all</i>".</li>
+                            <li><b>transition-duration</b>: El valor de esta propiedad indica el tiempo que va a durar la transición, en el ejemplo, 1s, que significa que durará un segundo.</li>
+                            <li><b>transition-timing-function</b>: Dependiendo del valor que pongamos, la transición se va a realizar más rápido o más lenta, en el ejemplo, la función "<i>ease-in</i>", que significa que la transición se va a realizar más rápido en el principio y más lenta en el final.</li>
+                            <li><b>transition-delay</b>: Esta propiedad indica el tiempo que tarda en comenzar la transición, en el ejemplo, 0s, que significa que comenzará inmediatamente.</li>
+                        </ul>
+                        <p class="text">Recuerda que también se pueden agrupar como en el comentario, no hace falta indicarlas de forma individual y puedes saltarte algunas, que les pondrá un valor por defecto (no te saltes ni "<i>transition-property</i>" ni "<i>transition-duration</i>", ¡son muy importantes!). Con todo esto podemos ver que el bloque izquierdo tiene un comportamiento más natural que el derecho ;D</p>
+                        <div class="code-container">
+                            <div class="code">
+                                <div class="nav-code">
+                                    <h4>html</h4>
+                                    <button type="button" onclick="copyToClipboard(this)">Copiar</button>
+                                </div>
+                                <pre>
+&lt!DOCTYPE html&gt
+&lthtml&gt
+&lthead&gt
+    &ltstyle&gt
+        body {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            margin: 0;
+        }
+
+        .block1 {
+            background-color: rgba(255, 0, 0, 0.3);
+            transition-property: transform;
+            transition-duration: 1s;
+            transition-timing-function: ease-in;
+            transition-delay: 0s;
+            /* transition: transform 1s ease-in 0s; */
+            padding: 1rem;
+        }
+
+        .block2 {
+            background-color: rgba(0, 255, 0, 0.3);
+            padding: 1rem;
+        }
+
+        .block1:hover {
+            transform: rotate(-45deg);
+        }
+
+        .block2:hover {
+            transform: rotate(-45deg);
+        }
+
+    &lt/style&gt
+&lt/head&gt
+&ltbody&gt
+    &ltdiv class="block1"&gtMouse over&lt/div&gt
+    &ltdiv class="block2"&gtMouse over&lt/div&gt
+&lt/body&gt
+&lt/html&gt</pre>
+                            </div>
+                            <iframe srcdoc="<head><style>body {background-color:white;display: flex;justify-content: space-around;align-items: center;height: 100vh;width: 100vw;margin: 0;}.button1 {background-color: rgba(255, 0, 0, 0.3);transition-property: transform;transition-duration: 1s;transition-timing-function: ease-in;transition-delay: 0s;padding: 1rem;}.button2 {background-color: rgba(0, 255, 0, 0.3);padding: 1rem;}.button1:hover {transform: rotate(-45deg);}.button2:hover {transform: rotate(-45deg);}</style></head><body><button type='button' class='button1'>Mouse over</button><button type='button' class='button2'>Mouse over</button></body>" frameborder="0" sandbox></iframe>
+                        </div>
+                    </div>
+                    <div class="sub-article">
+                        <h3>Animaciones</h3>
+                        <p class="text">Las animaciones son similares a las transiciones pero te permiten hacer muchas cosas distintas. En primer lugar te permiten hacer un comportamiento controlado y detallado a lo largo de la animación definiendo los porcentajes y como quieres que se encuentre en cada punto (¡No te preocupes que no hace falta rellenarlos todos!, los que no rellenes se ocupará de hacer una animación el propio navegador ;D). Primero crearemos la estructura con keyframes y luego indicaremos que tiene que pasar en cada punto, ya sea por ejemplo cambiar de color o moverse. Después tendremos que rellenar las propiedades allá dónde queramos:</p>
+                        <ul>
+                            <li><b>animation-name</b>: Tendremos que rellenarla con el nombre de la animación que hayamos puesto en keyframes. En el ejemplo, move.</li>
+                            <li><b>animation-duration</b>: Es el tiempo que tarda en ejecutarse la animación completa. En el ejemplo, 0s, que significa que nunca hará la animación. Aunque date cuenta de que hay dos clases que indican otra cosa, esto lo veremos más adelante.</li>
+                            <li><b>animation-timing-function</b>: Al igual que en las transiciones, es la función matemática que se utiliza para calcular la distribución de la animación a lo largo del tiempo. En el ejemplo, la función ease-in, que significa que la animación se va a ejecutar más rápido en el principio y más lenta en el final.</li>
+                            <li><b>animation-delay</b>: Es el tiempo que tarda en comenzar la animación. En el ejemplo 0 segundos, que significa que comenzará inmediatamente.</li>
+                            <li><b>animation-iteration-count</b>: Indicaremos la cantidad de veces que se va a repetir la animación. En el ejemplo, infinitas veces.</li>
+                            <li><b>animation-direction</b>: Esta propiedad indica por donde va a empezar la animación. En el ejemplo, desde el principio. Pero si indicamos "<i>reverse</i>", la animación se va a ejecutar en sentido contrario.</li>
+                            <li><b>animation-fill-mode</b>: Cuando la animación acabe (si no la hemos puesto infinita ;D), esta propiedad indica que va a suceder con el objeto. Por poner un ejemplo, si la animación lo pintase a azul, siendo rojo en un principio, al terminar volvería a ser rojo. En cambio, si ponemos "<i>forwards</i>" se mantendría en color azul al acabar la animación.</li>
+                        </ul>
+                        <p class="text">Ahora que sabemos animar hay que fijarse en las dos clases, "<i>fast</i>" y "<i>slow</i>", estas clases definen comportamientos distintos en base a la duración de la animación. Por tanto si añadimos a una etiqueta html que tenga animación podrían modificar las propiedades del objeto (en este caso porque la clase en css tiene mayor prioridad que la etiqueta) y conferir así de propiedades únicas reutilizables en nuestra página.</p>
+                        <div class="code-container">
+                            <div class="code">
+                                <div class="nav-code">
+                                    <h4>html</h4>
+                                    <button type="button" onclick="copyToClipboard(this)">Copiar</button>
+                                </div>
+                                <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;style&gt;
+		body {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			height: 100vh;
+			width: 100vw;
+			margin: 0;
+		}
+
+		@keyframes move {
+			0% {
+				transform: translateY(0);
+			}
+			50% {
+				transform: translateY(100px);
+			}
+			100% {
+				transform: translateY(0);
+			}
+		}
+
+		div {
+			padding: 1rem;
+			animation-name: move;
+			animation-duration: 0s;
+			animation-timing-function: ease-in-out;
+			animation-delay: 0s;
+			animation-iteration-count: infinite;
+			animation-direction: normal;
+			animation-fill-mode: none;
+		}
+
+		.red {
+			background-color: rgba(255, 0, 0, 0.3);
+		}
+
+		.green {
+			background-color: rgba(0, 255, 0, 0.3);
+		}
+
+		.slow {
+			animation-duration: 4s;
+		}
+
+		.fast {
+			animation-duration: 2s;
+		}
+	&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;div class="red fast"&gt;I'm fast&lt;/div&gt;
+	&lt;div class="green slow"&gt;I'm slow&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+                            </div>
+                            <iframe srcdoc="<!DOCTYPE html><html><head><style>body {display: flex;justify-content: space-around;align-items: center;height: 100vh;width: 100vw;margin: 0;}@keyframes move {0% {transform: translateY(0);}50% {transform: translateY(100px);}100% {transform: translateY(0);}}div {padding: 1rem;animation-name: move;animation-duration: 1s;animation-timing-function: ease-in-out;animation-delay: 0s;animation-iteration-count: infinite;animation-direction: normal;animation-fill-mode: none;}.red {background-color: rgba(255, 0, 0, 0.3);}.green {background-color: rgba(0, 255, 0, 0.3);}.slow {animation-duration: 4s;}.fast {animation-duration: 2s;}</style></head><body><div class='red fast'>I'm fast</div><div class='green slow'>I'm slow</div></body></html>" frameborder="0" sandbox></iframe>
+                        </div>
+                    </div>
+                </article>
+                <article>
+                    <h2 id="python">Python</h2>
+                    <p class="text">¿Sabes qué es Python? Sí, una serpiente también, pero yo estoy hablando del lenguaje de programación. Está basado en uno llamado c y rust, pero es un lenguaje bastante sencillo de aprender y muy útil de adquirir maestría. Es un lenguaje muy eficiente y que tiene una gigantesca comunidad desarrollando paquetes para usar de forma pública. Te va a permitir hacer casi cualquier cosa que quieras con un computador en las manos, y no, no hay que ser malo. Te brillan los ojos, ¿Qué idea se te ha ocurrido?</p>
+                    <div class="sub-article">
+                        <h3>Compresión de listas</h3>
+                        <p class="text">Cuando desarrollamos hablamos números y letras, hacemos operaciones, tanto matemáticas (sumar, multiplicar, derivar, etc.), como lógicas (si es verdad haz esto y si no lo otro), las cuales podemos agrupar para hacer cosas fascinantes, como poder sacar un listado no ordenado de nuestro puesto en la oposición y saber que número eres, con tan solo unas pocas líneas. Hablando de listas, es muy habitual que trabajemos con listas, ya sea en Excel en el trabajo o para hacer la compra o enumerar las tareas que tienes que hacer hoy. Por tanto, una lista en general va a recibir operaciones para cada uno de sus elementos (comprar, limpiar, comer, dormir, etc.). Existen formas de hacerlo igualmente válidas, pero nosotros queremos ser muy elegantes, así que vamos a comenzar.</p>
+                        <p class="text">Lo que vamos a hacer es seguir una estructura: [ <b>operación</b> for <b>elemento/s</b> in <b>lista</b> ], con el ejemplo [i+1 for i in range(5)]</p>
+                        <ul>
+                            <li><b>operación</b>: Es la operación que queremos realizar sobre cada elemento de la lista. Como podemos ver en el ejemplo, es la suma de uno a un elemento "i" (No os acelereis que lo vemos en el siguiente).</li>
+                            <li><b>elemento/s</b>: Es el elemento o los elementos descompuestos de la lista sobre los que queremos realizar la operación, en este caso la lista es de enteros y por tanto solo existe un posible elemento en cada iteración, por lo que le damos el nombre de "i", aunque podriamos poner el que queramos.</li>
+                            <li><b>lista</b>: Es la lista sobre la que queremos iterar, como se ha dicho antes, es una lista de enteros. La función "range" nos da una lista de enteros desde el 0 hasta el número que le damos sin incluirlo, por tanto "range(5)" nos da la lista [0, 1, 2, 3, 4].</li>
+                        </ul>
+                        <p class="text">¿Sabes cuál es la respuesta? En efecto, es [1, 2, 3, 4, 5]</p>
+                        <p class="text">¿Por qué lo hemos hecho así en vez de otra manera? En python existen distintas maneras de escribir algo, pero en este caso, cuando realizas operaciones sencillas sobre una lista o solo la usas para llamar a una función, es mucho más "idiomático" y fácil de entender por la comunidad. Así que ya sabes cómo ser mejor programador ;D.</p>
+                        <div class="code-container">
+                            <div class="code">
+                                <div class="nav-code">
+                                    <h4>html</h4>
+                                    <button type="button" onclick="copyToClipboard(this)">Copiar</button>
+                                </div>
+                                <pre>resultado = [i+1 for i in range(5)]
+//instead of
+for i in range(5):
+    resultado.append(i+1)</pre>
+                            </div>
+                            <iframe srcdoc="<!DOCTYPE html><html><head><style>body {display: flex;flex-direction: row;justify-content: space-around;align-items: center;flex-wrap: wrap;gap: 1rem;height: 100vh;width: 100vw;margin: 0;}table {border-collapse: collapse;}td {border: 1px solid black;padding: 0.5rem;}</style></head><body><table><tr><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td></tr></table><div>>> +1 >></div><table><tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr></table></body></html>" frameborder="0" sandbox></iframe>
+                        </div>
+                    </div>
+                    <div class="sub-article">
+                        <h3>Type hints</h3>
+                        <p class="text">¿Sabeis que son los tipos? Los tipos son una forma de especificar que una variable puede contener una forma de dato en concreto, por ejemplo, una variable tipo <i>int</i> sería una variable que puedes contener números enteros, mientras que una variable con tipo <i>str</i> contendría una cadena de caracteres. ¿Qué implicaciones tiene esto? Como podeis deducir implica que en una variable de tipo entero no podemos poner una cadena de caracteres y al reves. Aunque python es un lenguaje de tipado dinámico, ¿que qué es eso preguntas? Significa que no tenemos que decirle de que tipo son las variables, que el solito en tiempo de ejecución las inferira.</p>
+                        <p class="text">Entonces por qué me cuentas esta milonga de los tipos si no podemos decir que tipo tiene una variable, ¿se te ocurre algo? Pues porque es tan sencillo como que sobre determinados tipos no se puede realizar cualquier tipo de operación, por ejemplo, sobre una cadena de caracteres no podemos hacer un exponencial, eso solo nos vale en números.</p>
+                        <p class="text">¿Cómo lo hacemos entonces? Pues dado que en python no podemos forzar a que quien use nuestras funciones use determinados tipos podemos poner salvaguardas (comprobar por nosotros mismos que lo que nos están pasando es lo que esperamos) y para ayudar a que la gente no se equivoque, podemos usar <i>type hints</i>, que son anotaciones para que la persona que lo use vea que tipos espera la función y que le vamos a devolver. En el ejemplo podemos ver que esperamos un iterador con un tipo de dato "T" (que puede ser cualquier cosa) y un valor de ese mismo tipo "T", además de que el retorno va a ser el mismo tipo de iterador que nos han pasado con el mismo tipo de datos "T".</p>
+                        <div class="code-container">
+                            <div class="code">
+                                <div class="nav-code">
+                                    <h4>html</h4>
+                                    <button type="button" onclick="copyToClipboard(this)">Copiar</button>
+                                </div>
+                                <pre>from typing import Iterable, Iterator, TypeVar
+import itertools
+
+T = TypeVar('T')
+
+def deleteIfStartsWith(myList: Iterable[T], myValue: T) -> Iterator[T]:
+    return itertools.islice(myList, 1, None) if myValue == next(iter(myList), None) else iter(myList)</pre>
+                            </div>
+                            <iframe srcdoc="<!DOCTYPE html><html><head><style>body {display: flex;flex-direction: row;justify-content: space-around;align-items:stretch;flex-wrap: wrap;gap: 1rem;margin: 0;}table {border-collapse: collapse;}td {border: 1px solid black;padding: 0.5rem;}</style></head><body><div><p>Entradas</p><table><tr><td>Person('Juan', 12)</td><td>Person('Ana', 23)</td><td>Person('Jorge', 17)</td></tr></table><p>Person('Juan', 12)</p></div><div><p>Función</p><p>>> deleteIfStartsWith() >></p></div><div><p>Salida</p><table><tr><td>Person('Ana', 23)</td><td>Person('Jorge', 17)</td></tr></table></div></body></html>" frameborder="0" sandbox></iframe>
+                        </div>
+                    </div>
+                    <div class="sub-article">
+                        <h3>Regex fácil</h3>
+                        <p class="text">En general utilizamos el texto para absolutamente todo lo que hacemos, pero resulta que los equipos muchas veces no nos permiten utilizar el texto o lenguaje que queramos o lo muestra de forma extraña. ¿Sabes por qué sucede esto? Resulta que en su día, cuando se invento la tecnología de los computadores se utilizo un subconjunto muy limitado de caracteres, lo que se conoce como el alfabeto ASCII y mucha tecnología solo utiliza ese formato, aunque hoy en día hemos añadido soporte para muchos caracteres más, lo que se conoce como Unicode o UTF-8. Aunque no toda la tecnología actual utiliza o permite utilizar este formato.</p>
+                        <p class="text">Vale pero, ¿qué significa "<i>regex</i>"? Es una expresión regular, que es una forma de expresar patrones de texto (los números también van a entrar porque se encuentran dentro de UTF-8 ;D), por ejemplo, un número de teléfono es un patrón de texto que puede ser "<i>123456789</i>", aunque también lo podemos escribrir en un formato distinto como "<i>123-456-789</i>" o "<i>123.456.789</i>". ¿Va viendo por dónde vamos a continuar? Pues es muy sencillo, porque vamos a utilizarlo para eliminar/sustituir los caracteres que no queramos del texto, como por ejemplo las tildes o la ñ para poder convertir el texto a algo funcional para la tecnología que vamos a utilizar.</p>
+                        <p class="text">En el ejemplo vemos dos funciones, la primera es una función vamos a aprovechar de la libreía estandar de Python unicodedata, mediante compresión de listas (que ahora ya conocemos ;D) para sustituir todos los caracteres a su equivalente en ASCII, como por ejemplo la "ñ" a "n" o la "é" a "e". La segunda función utiliza la primera y le da un formato utilizable en ur, quitando primero los carácteres distintos de ASCII, luego a minúsculas y finalmente los espacios por barras bajas, porque si no tendrían que ser "%20" que es bastante menos legible ;D, para terminar con quedarnos con el patrón que contenga de la "a" a la "z" y de "0" a "9" y las "_".</p>
+                        <div class="code-container">
+                            <div class="code">
+                                <div class="nav-code">
+                                    <h4>html</h4>
+                                    <button type="button" onclick="copyToClipboard(this)">Copiar</button>
+                                </div>
+                                <pre>import re
+import unicodedata
+                                    
+def remove_accentuation(text: str):
+    return ''.join(c for c in unicodedata.normalize('NFD', text) if unicodedata.category(c) != 'Mn')
+
+def text_safe(text: str):
+    text = remove_accentuation(text)
+    text = text.lower()
+    text = text.replace(' ', '_')
+    text = re.sub(r'[^a-z0-9_]', '', text)
+    return text</pre>
+                            </div>
+                            <iframe srcdoc="<!DOCTYPE html><html><head><style>body {display: flex;flex-direction: row;justify-content: space-around;align-items:stretch;flex-wrap: wrap;gap: 1rem;height: 100vh;width: 100vw;margin: 0;}</style></head><body><div><p>¿Cómo podar con una guadaña?, [tutorial]</p></div><div><p>>> safeText() >></p></div><div><p>Como_podar_con_una_guadana_tutorial</p></div></body></html>" frameborder="0" sandbox></iframe>
+                        </div>
+                    </div>
+                    <div class="sub-article">
+                        <h3>Funciones como argumentos</h3>
+                        <p class="text">¿Ya sabemos lo que son los argumentos? Son una forma de pasar la información a una función o procedimiento para que realice la lógica o cálculos que sean aplique, también denominados parámetros. Como hemos visto antes existen los tipos de datos, y, como ahora vamos a ver podemos utilizar un tipo "función" (en realidad por debajo es una dirección de memoria para poder llamarla, pero eso ahora no nos interesa), eso significa que también podemos enviar funciones para que podamos crear una función genérica que haga un procedimiento complejo y que añada lo que sea necesaria sin necesidad de programar 15 funciones distintas que hagan más o menos lo mismo pero con ligeros cambios.</p>
+                        <p class="text">Como podemos ver en el ejemplo, (utilizando la compresión de listas otra vez ;D) tenemos una función que recibe un iterador y va aplicando a todos sus valores la función que el usuario desee para generarnos una lista modificada con los valores nuevos. ¿Sabías que acabas de implementar una función muy similar a una función estándar conocida como "<i>map</i>"?</p>
+                        <div class="code-container">
+                            <div class="code">
+                                <div class="nav-code">
+                                    <h4>html</h4>
+                                    <button type="button" onclick="copyToClipboard(this)">Copiar</button>
+                                </div>
+                                <pre>from typing import Callable, Iterable, Iterator, TypeVar
+
+T = TypeVar('T')
+
+def doForAll(myList: Iterable[T], func: Callable[[T], T]) -> Iterator[T]:
+    return (func(i) for i in myList)</pre>
+                            </div>
+                            <iframe srcdoc="<!DOCTYPE html><html><head><style>body {display: flex;flex-direction: row;justify-content: space-around;align-items: center;flex-wrap: wrap;gap: 1rem;height: 100vh;width: 100vw;margin: 0;}table {border-collapse: collapse;}td {border: 1px solid black;padding: 0.5rem;}</style></head><body><table><tr><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td></tr></table><div>>> lambda x: x + 1 >></div><table><tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr></table></body></html>" frameborder="0" sandbox></iframe>
+                        </div>
+                    </div>
+                </article>
+                <article>
+                    <h2 id="c">C++</h2>
+                    <div class="sub-article">
+                        <h3>Vectores, arrays, listas y mapas hash</h3>
+                        <p class="text">Que de cosas hay en el título, a ver cómo hacemoes esto, entre tanto, ¿conoces estás estructuras? Como podeis imaginar son estructuras muy diferentes que se pueden utilizar para guardar datos según distintos criterios, generalmente de eficiencia. Eso es maravilloso, pero, ¿cómo se cúal de todos utilizar?</p>
+                        <p>Primero de todo ¿Sabes qué es la complejidad O(algo)?¿Y qué es la complejidad temporal y espacial (no hablo de Palkia y Dialga, no ;D)? En el mundo de la programación es muy habitual trabajar con estructuras en las que tenemos que buscar información, insertar nueva, modificar datos y borrar la no necesaria. Pero... (siempre hay un pero, ¿verdad? ;D), estas operaciones no siempre son instantaneas, porque a veces no es tan fácil indicar donde está ese dato o dónde tenemos que ponerlo. La complejidad por tanto se refiere a cuánto me va a costar en espacio o tiempo </p>
+                        <ul>
+                            <li><b>array</b>: El array es una lista de elementos que siempre va a tener un tamaño inamovible en cuanto lo creemos, como vemos en el ejemplo, hemos creado una lista de enteros de tamaño 3, por lo que hay tres espacios, mientras que hemos añadido un elemento en la posición 0 (siempre empezamos en 0 en la informática, cosas del binario ;D). Las ventajas que tiene es que sabemos antes de compilar el programa lo que va a ocupar y tenerlo preparado, sabemos cual va a ser el tamaño (n) y el acceso a los elementos si tenemos que buscarlo es por tanto complejidad lineal o también dicho O(n). Entonces es útil solo si sabemos el tamaño de antemano, si no no merece la pena. Hay que tener mucho cuidado con no pasarse al acceder o quedarse corto, porque si accedemos en el ejemplo al -1 o al 3 (recordad que empezamos en 0 así que llegamos hasta 2) estaremos intentando acceder ilegalmente a la memoria de otra cosa que no sabemos qué es y eso está mal.</li>
+                            <li><b>vector</b>: Es muy similar a todo lo explicado en el array pero el tamaño es dinámico, cambiará en tiempo de ejecución según vayamos añadiendo o quitando elementos, es O(n) la capacidad y O(n) la búsqueda, aunque la inserción sigue siendo O(1) (mientras no tratemos de ordenarlo al menos :D). La ventaja adicional es que puede crecer o disminuir según las necesidades, aunque esto hace que sea un poco más lento por tener que realojar la memoria dado que debe ser continua. Lo usaremos cuando no conozcamos el tamaño.</li>
+                            <li><b>unordered_set</b>: Es una lista aunque un poco más especial, está implementada con lo que se conoce como un árbol rojo negro (aunque en realidad se puede hacer de otras maneras también, en este caso hablo de C++), estos árboles constan de nodos ordenados que se extienden como una árbol boca abajo (no os aburro con los detalles, aunque en realidad es muy sencillo, solo tienes que entender que durante el borrado y la inserción se hacen como mucho dos rotaciones para reordenar el árbol y propagar de modo que la profundidad del árbol o la "algura" siempre sea log n). Lo interesante es que con ello sabemos que las búsquedas siempre van a ser O(log n), o logarítimica, que es mucho mejor, mientras que la complejidad es O(n), pero... me diréis, yo veo tres cuadrados en cada nodo, eso sería mínimo 3n, lo cual es cierto, porque por cada nodo necesitamos 3 espacios, uno para guardar la información y otro para indicar cual es el siguiente nodo menor y cual es el siguiente mayor, pero nosotros simplificamos diciendo que es n, aunque ciertamente va a ocupar un poco más. Pero claro, si necesitamos mantener una lista ordenada esto es muchísimo mejor que tener que reordenar una lista (simplemente enlazada, doblemente enlazada, simple, circular, etc.) porque tardamos menos en encontrar e insertar, siempre que vayamos a hacer muchos accesos, algo bastante habitual.</li>
+                            <li><b>unordered_map</b>: Este es un tipo de lista especial compuesta de pares de elementos (una "clave" y un "valor"), esto es porque la búsqueda se hace mediante una función <i>hash</i>, un tipo de función al que nosotros le damos la "clave" y nos dice en que posición exacta estará ese elemento. Por lo que la búsqueda e inserción serían O(1), básicamente instantáneas, pero existe un concepto llamado colisión, que básicamente implica que ¿qué sucede si dos claves distintas al pasar por la función me devuelven lo mismo?, lo cual hay que gestionar mediante segundas claves o en la siguiente posición inmediata u otras formas y si se borra es posible que haya que recalcularla entera, aunque hay formas de mitigar esto. Lo importante es que son muy rápidas en el caso general pero... (lo has visto venir seguro ;D), ocupan mucho más espacio, porque lo necesitamos para que exista el menor número posible de colisiones, habitualmente hablamos de mínimo el doble de espacios que datos. Por lo tanto estas las usaremos cuando necesitemos un acceso muy rápido a los datos y no nos importe tanto el espacio.</li>
+                        </ul>
+                        <p class="text">En definitiva, depende de lo que vayas a hacer te interesa más una u otra. Además, se que te has dado cuenta, cuanta más velocidad quieras para acceder (que suele ser el caso más común), más "espacio" o memoria vas a necesitar utilizar.</p>
+                        <div class="code-container">
+                            <div class="code">
+                                <div class="nav-code">
+                                    <h4>html</h4>
+                                    <button type="button" onclick="copyToClipboard(this)">Copiar</button>
+                                </div>
+                                <pre>#include &lt;iostream>
+#include &lt;vector>
+#include &lt;unordered_set>
+#include &lt;unordered_map>
+
+int main() {
+    int arr[3];
+    arr[0] = 10;
+    std::cout &lt;&lt; arr[0] &lt;&lt; std::endl;
+
+    std::vector&lt;int> vec;
+    vec.push_back(7);
+    vec.push_back(2);
+    std::cout &lt;&lt; vec[0] &lt;&lt; std::endl;
+
+    std::unordered_set&lt;int> uset;
+    uset.insert(3);
+    uset.insert(1);
+    uset.insert(2);
+    for (int val : uset) {
+        std::cout &lt;&lt; val &lt;&lt; std::endl;
+    }
+
+    std::unordered_map&lt;int, std::string> umap;
+    umap[0] = "patata";
+    umap[6] = "tortilla";
+    std::cout &lt;&lt; umap[1] &lt;&lt; std::endl;
+}</pre>
+                            </div>
+                            <iframe srcdoc="<!DOCTYPE html><html><head><style>body {display: flex;flex-direction: column;justify-content: space-around;align-items:stretch;flex-wrap: wrap;gap: 1rem;height: 100vh;margin: 0;}table {border-collapse: collapse;margin: 0 auto;}td {border: 1px solid rgb(128, 128, 128);padding: 5px;}.bigger-border {border: 4px solid black;}.rojo {background-color: rgba(255, 0, 0, 0.3);}.negro {background-color: rgba(0, 0, 0);color: white;}h3 {text-align: center;}</style></head><body><div><h3>std::array</h3><table><tr class='bigger-border'><td>10</td><td></td><td></td></tr></table></div><div><h3>vector</h3><table><tr><td>7</td><td>2</td></tr></table></div><div><h3>unordered_set</h3><div><table class='center'><tr><td class='rojo'></td><td>2</td><td class='negro'></td></tr></table><table class='center'><tr><td></td><td class='rojo'>1</td><td></td><td></td><td class='negro'>3</td><td></td></tr></table></div></div><div><h3>unordered_map</h3><table><tr><td>patata</td><td></td><td>tortilla</td><td></td></tr></table></div></body></html>" frameborder="0" sandbox></iframe>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <div id="useful-data">
+            <section class="images first">
+                <img src="./static/icons/madeline.ico" class="game-icon first" alt="Madeline (Celeste video game) idle animation">
+                <img src="./static/icons/rathalos.ico" class="game-icon last" alt="Rathalos (Monster Hunter video game) sprite">
+            </section>
+            <section class="data">
+                <div>
+                    <h3>Enlaces</h3>
+                    <p><a href="https://es.linkedin.com/in/alejandro-valtierra-banos-9224932a8" target="_blank"><img src="./static/icons/linkedin.png" class="icon" alt="Linkedin icon"> Linkedin</a></p>
+                    <p><a href="https://github.com/AlejandroVLDev" target="_blank"><img src="./static/icons/github.png" class="icon" alt="GitHub icon"> GitHub</a></p>
+                </div>
+                <div>
+                    <h3>Imágenes</h3>
+                    <p><a href="./claims.html" target="_blank">Derechos</a></p>
+                </div>
+            </section>
+            <section class="images last">
+                <img src="./static/icons/mago_oscuro.ico" class="game-icon first" alt="dark mage (Final Fantasy video game) sprite">
+                <img src="./static/icons/pikachu.ico" class="game-icon last" alt="Pikachu (Pokemon video game) sprite">
+            </section>
+        </div>
+        <section class="copyright">© Copyright 2025 Alejandro Valtierra. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</section>
+    </footer>
+</body>
+</html>

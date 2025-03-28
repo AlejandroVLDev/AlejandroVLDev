@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Principal | Alejandro Valtierra Portfolio</title>
+    <title>Biografía | Alejandro Valtierra Portfolio</title>
     <link rel="stylesheet" href="static/styles/base.css">
-    <script src="static/scripts/base.js" defer></script>
-    <script src="static/scripts/canvas.js" defer></script>
-    <script src="static/scripts/copy.js" defer></script>
 </head>
 <body>
     <noscript>
@@ -22,25 +19,31 @@
     </div>
     <div class="main-view">
         <nav id="nav">
-            <ul id="mainList">
+            <ul id="main-list">
                 <li class="cross-space"><span id="cross">&#x3A7;</span></li>
-                <li><a href="#me">Alejandro Valtierra</a></li>
                 <li>
-                    <a href="#development-diaries">Diarios de desarrollo</a>
+                    <a href="#me">Alejandro Valtierra</a>
                     <ul>
-                        <li class="sub-list"><a href="#sql">SQL</a></li>
-                        <li class="sub-list"><a href="#html-and-css">HTML y CSS</a></li>
-                        <li class="sub-list"><a href="#python">Python</a></li>
-                        <li class="sub-list"><a href="#c">C++</a></li>
+                        <li class="sub-list"><a href="#biography">Biografía</a></li>
+                        <li class="sub-list"><a href="#structure">Estructura del portfolio</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#works">Trabajos</a>
+                    <a href="./diaries.html#development-diaries">Diarios de desarrollo</a>
                     <ul>
-                        <li class="sub-list"><a href="#dungeon-guide">Guía de la mazmorra</a></li>
-                        <li class="sub-list"><a href="#talking-recursively">Hablando recursivo</a></li>
-                        <li class="sub-list"><a href="#saving-passwords">Guardando contraseñas</a></li>
-                        <li class="sub-list"><a href="#paper-and-newspaper">Papel y periódico</a></li>
+                        <li class="sub-list"><a href="./diaries.html#sql">SQL</a></li>
+                        <li class="sub-list"><a href="./diaries.html#html-and-css">HTML y CSS</a></li>
+                        <li class="sub-list"><a href="./diaries.html#python">Python</a></li>
+                        <li class="sub-list"><a href="./diaries.html#c">C++</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="./works.html#works">Trabajos</a>
+                    <ul>
+                        <li class="sub-list"><a href="./works.html#dungeon-guide">Guía de la mazmorra</a></li>
+                        <li class="sub-list"><a href="./works.html#talking-recursively">Hablando recursivo</a></li>
+                        <li class="sub-list"><a href="./works.html#saving-passwords">Guardando contraseñas</a></li>
+                        <li class="sub-list"><a href="./works.html#paper-and-newspaper">Papel y periódico</a></li>
                     </ul>
                 </li>
             </ul>
@@ -73,185 +76,69 @@
                         </ul>
                     </div>
                 </div>
-            </section>
-            <section>
-                <h1 id="development-diaries">Diarios de desarrollo</h1>
-                <p class="text">¡Hola! En esta sección podrás encontrar algunas pequeñas píldoras de desarrollos interesantes que pueden ayudarte a mejorar algunos de tus desarrollos o hacer que sean más eficientes o bonitos. ¡Porque los detalles importan!</p>
                 <article>
-                    <h2 id="sql">SQL</h2>
-                    <div class="sub-article">
-                        <h3>Índices</h3>
-                        <p class="text"></p>
-                    </div>
-                    <div class="sub-article">
-                        <h3>¿Criptografía por defecto?</h3>
-                        <p class="text"></p>
-                    </div>
-                </article>
-                <article>
-                    <h2 id="html-and-css">HTML y CSS</h2>
-                    <p class="text">Cómo recordatorio, toda esta página está hecha con HTML, CSS y JavaScript. Por lo que puedes darte una vuelta por las entrañas o copiarla para ver como están hechas las animaciones y estilos.</p>
-                    <div class="sub-article">
-                        <h3>nav, body y footer</h3>
-                        <p class="text">Uno de los mayores problemas gráficos que se pueden encontrar en páginas es el <i>footer</i>, cuando el contenido es poco el <i>footer</i> en vez de estar en la parte inferior de la pantalla, quedará en medio de la misma. Además la solución es inmensamente sencilla, unas pocas líneas de CSS. Primero tendremos que indicar que el body tenga como tamaño mínimo la altura completa de la pantalla, luego utilizaremos un <i>flex</i> con dirección columna para que se propaguen a lo largo del espacio. Finalmente utilizaremos "flex: 1" para indicar que el elemento principal "crezca" y ocupe todo el espacio posible.</p>
-                        <div class="code-container">
-                            <div class="code">
-                                <div class="nav-code">
-                                    <h4>html</h4>
-                                    <button type="button" onclick="copyToClipboard('html-and-css-code')">Copiar</button>
-                                </div>
-                                <pre id="html-and-css-code">
-&lt!DOCTYPE html&gt
-&lthtml&gt
-&lthead&gt
-    &ltstyle&gt
-        body {
-            display: flex;
-            flex-direction: column; 
-            min-height: 100vh;
+                    <h2 id="biography">Biografía</h2>
+                    <p class="text">¡Hola! Mi nombre es Alejandro Valtierra y tengo 26. Soy un ingeniero informático y de computadores graduado por la URJC <img class="icon" src="./static/icons/urjc.png" alt="Logo Universidad Rey Juan Carlos, una 'u' blanca con una corona simplificada encima compuesta de círculos y rayas."> con algo más de dos años de experiencia laboral. Me encantan las "maquinitas" y computadores desde que me regalaron mi primera consola (una Nintendo DS Lite), desde entonces me he dedicado al mundo de la programación, donde encuentro algunos de mis mayores intereses, siendo el mayor de todos la optimización de rutinas y el aprendizaje profundo. Me gusta mucho la versatilidad de la web, dado que permite acceder a las cosas desde cualquiera lugar. Entre algunos de mis intereses, a parte de la programación, se encuentran los juegos de rol (maestro de mazmorra en D&D y mago la ascensión principalemente), la lectura (fantasía y ciencia ficción) y los videojuegos (rpgs principalmente). Soy una persona con mucha capacidad creativa y de resolución de problemas, que solo aumenta mi forma de trabajar y mis aficiones. Soy una persona tímida y alegre, suelo llevarme muy bien con mis compañeros y hablar largo y tendido de los temas que me interesan para encontrar soluciones a problemas y escuchar la opinión e ideas de los compañeros, en un proceso de mejora continua. Me encanta aprender cosas nuevas y discutir con la gente para descubrir nuevos puntos de vista y poder incorporarlos o desarrollar el conocimiento que la gente me proporciona. No me gusta la falta de puntualidad ni que la gente se enfade (suficiente tiene cada uno con lo que tiene), aunque me encanta ayudar si tengo los medios para ello. Me encanta sonreir a la gente y ver como se les dibuja una sonrisa en la cara, más aún si es genuina, y una risa es una victoria para la alegría.</p>
+                    <h3>Lenguajes de programación</h3>
+                    <p class="text">Te dejo por aquí una lista de los lenguajes de programación con los que me manejo y la habilidad que considero que tengo con cada uno de ellos:</p>
+                    <table id="programming-languages-table">
+                        <thead>
+                            <tr>
+                                <th>Lenguaje</th>
+                                <th>Habilidad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>python</td>
+                                <td value="5"><img class="icon" src="./static/icons/star.png" alt="Estrella pintada de amarillo"><img class="icon" src="./static/icons/star.png" alt="Estrella pintada de amarillo"><img class="icon" src="./static/icons/star.png" alt="Estrella pintada de amarillo"><img class="icon" src="./static/icons/star.png" alt="Estrella pintada de amarillo"><img class="icon" src="./static/icons/star.png" alt="Estrella pintada de amarillo"></td>
+                            </tr>
+                            <tr>
+                                <td>HTML</td>
+                                <td value="5"><img class="icon" src="./static/icons/star.png" alt="Estrella pintada de amarillo"><img class="icon" src="./static/icons/star.png" alt="Estrella pintada de amarillo"><img class="icon" src="./static/icons/star.png" alt="Estrella pintada de amarillo"><img class="icon" src="./static/icons/star.png" alt="Estrella pintada de amarillo"><img class="icon" src="./static/icons/star.png" alt="Estrella pintada de amarillo"></td>
+                            </tr>
+                            <tr>
+                                <td>CSS</td>
+                                <td value="5"><img class="icon" src="./static/icons/star.png" alt="Estrella pintada de amarillo"><img class="icon" src="./static/icons/star.png" alt="Estrella pintada de amarillo"><img class="icon" src="./static/icons/star.png" alt="Estrella pintada de amarillo"><img class="icon" src="./static/icons/star.png" alt="Estrella pintada de amarillo"><img class="icon" src="./static/icons/star.png" alt="Estrella pintada de amarillo"></td>
+                            </tr>
+                            <tr>
+                                <td>JavaScript</td>
+                                <td value="5"><img class="icon" src="./static/icons/star.png" alt="Estrella pintada de amarillo"><img class="icon" src="./static/icons/star.png" alt="Estrella pintada de amarillo"><img class="icon" src="./static/icons/star.png" alt="Estrella pintada de amarillo"><img class="icon" src="./static/icons/star.png" alt="Estrella pintada de amarillo"><img class="icon" src="./static/icons/star.png" alt="Estrella pintada de amarillo"></td>
+                            </tr>
+                            <tr>
+                                <td>C++</td>
+                                <td value="4"><img class="icon" src="./static/icons/star.png" alt="Estrella pintada de amarillo"><img class="icon" src="./static/icons/star.png" alt="Estrella pintada de amarillo"><img class="icon" src="./static/icons/star.png" alt="Estrella pintada de amarillo"><img class="icon" src="./static/icons/star.png" alt="Estrella pintada de amarillo"><img class="icon" src="./static/icons/empty_star.png" alt="Estrella con borde negro sin relleno"></td>
+                            </tr>
+                            <tr>
+                                <td>SQL</td>
+                                <td value="5"><img class="icon" src="./static/icons/star.png" alt="Estrella pintada de amarillo"><img class="icon" src="./static/icons/star.png" alt="Estrella pintada de amarillo"><img class="icon" src="./static/icons/star.png" alt="Estrella pintada de amarillo"><img class="icon" src="./static/icons/star.png" alt="Estrella pintada de amarillo"><img class="icon" src="./static/icons/star.png" alt="Estrella pintada de amarillo"></td>
+                            </tr>
+                            <tr>
+                                <td>Haskell</td>
+                                <td value="4"><img class="icon" src="./static/icons/star.png" alt="Estrella pintada de amarillo"><img class="icon" src="./static/icons/star.png" alt="Estrella pintada de amarillo"><img class="icon" src="./static/icons/star.png" alt="Estrella pintada de amarillo"><img class="icon" src="./static/icons/star.png" alt="Estrella pintada de amarillo"><img class="icon" src="./static/icons/empty_star.png" alt="Estrella con borde negro sin relleno"></td>
+                            </tr>
+                            <tr>
+                                <td>Java</td>
+                                <td value="3"><img class="icon" src="./static/icons/star.png" alt="Estrella pintada de amarillo"><img class="icon" src="./static/icons/star.png" alt="Estrella pintada de amarillo"><img class="icon" src="./static/icons/star.png" alt="Estrella pintada de amarillo"><img class="icon" src="./static/icons/empty_star.png" alt="Estrella con borde negro sin relleno"><img class="icon" src="./static/icons/empty_star.png" alt="Estrella con borde negro sin relleno"></td>
+                            </tr>
+                            <tr>
+                                <td>R</td>
+                                <td value="2"><img class="icon" src="./static/icons/star.png" alt="Estrella pintada de amarillo"><img class="icon" src="./static/icons/star.png" alt="Estrella pintada de amarillo"><img class="icon" src="./static/icons/empty_star.png" alt="Estrella con borde negro sin relleno"><img class="icon" src="./static/icons/empty_star.png" alt="Estrella con borde negro sin relleno"><img class="icon" src="./static/icons/empty_star.png" alt="Estrella con borde negro sin relleno"></td>
+                            </tr>
+                            <tr>
+                                <td>matlab</td>
+                                <td value="2"><img class="icon" src="./static/icons/star.png" alt="Estrella pintada de amarillo"><img class="icon" src="./static/icons/star.png" alt="Estrella pintada de amarillo"><img class="icon" src="./static/icons/empty_star.png" alt="Estrella con borde negro sin relleno"><img class="icon" src="./static/icons/empty_star.png" alt="Estrella con borde negro sin relleno"><img class="icon" src="./static/icons/empty_star.png" alt="Estrella con borde negro sin relleno"></td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-            background-color: white;
-            margin: 0;
-        }
-
-        main {
-            flex: 1;
-        }
-
-        nav {
-            background-color: rgba(255, 0, 0, 0.3);
-        }
-
-        footer {
-            background-color: rgba(0, 255, 0, 0.3);
-        }
-    &lt/style&gt
-&lt/head&gt
-&ltbody&gt
-    &ltnav&gtSoy la barra de navegación&lt/nav&gt
-    &ltmain&gtSoy el cuerpo&lt/main&gt
-    &ltfooter&gtSoy el pie de página&lt/footer&gt
-&lt/body&gt
-&lt/html&gt</pre>
-                            </div>
-                            <iframe srcdoc="<head><style>body {display: flex;flex-direction: column; min-height: 100vh;background-color: white;margin: 0;}main {flex: 1;}nav {background-color: rgba(255, 0, 0, 0.3);}footer {background-color: rgba(0, 255, 0, 0.3);}</style></head><body><nav>Soy la barra de navegación</nav><main>Soy el cuerpo</main><footer>Soy el pie de página</footer></body>" frameborder="0" sandbox></iframe>
-                        </div>
-                    </div>
-                    <div class="sub-article">
-                        <h3>flex</h3>
-                        <p class="text">¿Por qué deberías usar flex?</p>
-                    </div>
-                    <div class="sub-article">
-                        <h3>Transiciones</h3>
-                        <p class="text">Las transiciones son un elemento muy importante del diseño web, porque mejoran mucho la experiencia del usuario, frente a un comportamiento funcional pero robótico. Para ello se utilizan las propiedades de la transición: indicando sobre que propiedades se va a trabajar, en el ejemplo, sobre la propiedad transform, pero se puede casi cualquier cosa; luego el tiempo que va a durar la animación en completarse, a continuación el tipo de función de tiempo, que indica la distribución de la animación a lo largo del tiempo, en el ejemplo que tarde un poquito más en comenzar y acabe más rápido; y finalmente el tiempo que va a tardar en comenzar la animación, en el ejemplo de forma inmediata. Con ello podemos ver que el botón izquierdo tiene un comportamiento más natural que el derecho ;D</p>
-                        <div class="code-container">
-                            <div class="code">
-                                <div class="nav-code">
-                                    <h4>html</h4>
-                                    <button type="button" onclick="copyToClipboard('html-and-css-code')">Copiar</button>
-                                </div>
-                                <pre id="html-and-css-code">
-&lt!DOCTYPE html&gt
-&lthtml&gt
-&lthead&gt
-    &ltstyle&gt
-        body {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            height: 100vh;
-            width: 100vw;
-            margin: 0;
-        }
-
-        .block1 {
-            background-color: rgba(255, 0, 0, 0.3);
-            transition-property: transform;
-            transition-duration: 1s;
-            transition-timing-function: ease-in;
-            transition-delay: 0s;
-            /* transition: transform 1s ease-in 0s; */
-            padding: 1rem;
-        }
-
-        .block2 {
-            background-color: rgba(0, 255, 0, 0.3);
-            padding: 1rem;
-        }
-
-        .block1:hover {
-            transform: rotate(-45deg);
-        }
-
-        .block2:hover {
-            transform: rotate(-45deg);
-        }
-
-    &lt/style&gt
-&lt/head&gt
-&ltbody&gt
-    &ltdiv class="block1"&gtMouse over&lt/div&gt
-    &ltdiv class="block2"&gtMouse over&lt/div&gt
-&lt/body&gt
-&lt/html&gt</pre>
-                            </div>
-                            <iframe srcdoc="<head><style>body {background-color:white;display: flex;justify-content: space-around;align-items: center;height: 100vh;width: 100vw;margin: 0;}.button1 {background-color: rgba(255, 0, 0, 0.3);transition-property: transform;transition-duration: 1s;transition-timing-function: ease-in;transition-delay: 0s;padding: 1rem;}.button2 {background-color: rgba(0, 255, 0, 0.3);padding: 1rem;}.button1:hover {transform: rotate(-45deg);}.button2:hover {transform: rotate(-45deg);}</style></head><body><button type='button' class='button1'>Mouse over</button><button type='button' class='button2'>Mouse over</button></body>" frameborder="0" sandbox></iframe>
-                        </div>
-                    </div>
-                    <div class="sub-article">
-                        <h3>Animaciones</h3>
-                        <p class="text"></p>
-                    </div>
-                </article>
-                <article>
-                    <h2 id="python">Python</h2>
-                    <div class="sub-article">
-                        <h3>Compresión de listas</h3>
-                        <p class="text"></p>
-                    </div>
-                    <div class="sub-article">
-                        <h3>Type hints</h3>
-                        <p class="text"></p>
-                    </div>
-                    <div class="sub-article">
-                        <h3>Regex fácil</h3>
-                        <p class="text"></p>
-                    </div>
-                    <div class="sub-article">
-                        <h3>Funciones como argumentos</h3>
-                        <p class="text"></p>
-                    </div>
-                </article>
-                <article>
-                    <h2 id="c">C++</h2>
-                    <div class="sub-article">
-                        <h3>Vectores, arrays y listas</h3>
-                        <p class="text"></p>
-                    </div>
-                    <div class="sub-article">
-                        <h3>Mapas</h3>
-                        <p class="text"></p>
-                    </div>
-                </article>
-            </section>
-            <section>
-                <h1 id="works">Trabajos</h1>
-                <p class="text"></p>
-                <article>
-                    <h2 id="dungeon-guide">Guía de la mazmorra</h2>
-                    <p class="text"></p>
-                </article>
-                <article>
-                    <h2 id="talking-recursively">Hablando recursivo</h2>
-                    <p class="text"></p>
-                </article>
-                <article>
-                    <h2 id="saving-passwords">Guardando contraseñas</h2>
-                    <p class="text"></p>
-                </article>
-                <article>
-                    <h2 id="paper-and-newspaper">Papel y periódico</h2>
-                    <p class="text"></p>
+                    <h2 id="structure">Estructura del portfolio</h2>
+                    <p class="text">El portfolio está dividido en tres secciones principales:</p>
+                    <ul>
+                        <li><b>Alejandro Valtierra</b>: Aquí podrás encontrar información sobre mí, mi vida laboral y mis intereses.</li>
+                        <li><b>Diarios de desarrollo</b>: Aquí podrás encontrar algunos desarrollos y píldoras que creo que pueden ser muy útiles para cualquier persona, no solo desarrolladores, dado que me parece fascinante que la gente aprenda un poquito de como funciona el mundillo, no es magia ;D. Está dividida según algunos de los lenguajes que he utilizado a lo largo del tiempo, aunque no todos, si quieres en la anterior sección indico cuales conozco y he utilizado.</li>
+                        <li><b>Trabajos</b>: Aquí podrás encontrar algunos trabajos que he realizado, aunque no todos, pero considero que son algunos de los que más me han gustado y más orgulloso me siento.</li>
+                    </ul>
                 </article>
             </section>
         </main>
@@ -281,5 +168,9 @@
         </div>
         <section class="copyright">© Copyright 2025 Alejandro Valtierra. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</section>
     </footer>
+    <script src="static/scripts/base.js" defer></script>
+    <script src="static/scripts/canvas.js" defer></script>
+    <script src="static/scripts/copy.js" defer></script>
+    <script src="static/scripts/table.js" defer></script>
 </body>
 </html>

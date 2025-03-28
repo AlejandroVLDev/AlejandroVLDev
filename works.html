@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabajos | Alejandro Valtierra Portfolio</title>
+    <link rel="stylesheet" href="static/styles/base.css">
+    <script src="static/scripts/base.js" defer></script>
+    <script src="static/scripts/canvas.js" defer></script>
+    <script src="static/scripts/copy.js" defer></script>
+</head>
+<body>
+    <noscript>
+        <div><img src="static/icons/warning.png" alt="Señal de advertencia"></div>
+        <p><b>¡JavaScript está desactivado!</b><br>Es importante activar JavaScript para ver correctamente el contenido.</p>
+        <div><img src="static/icons/warning.png" alt="Señal de advertencia"></div>
+    </noscript>
+
+    <div class="container">
+        <div class="circle" id="circle"></div>
+        <canvas id="field" class="field"></canvas>
+    </div>
+    <div class="main-view">
+        <nav id="nav">
+            <ul id="main-list">
+                <li class="cross-space"><span id="cross">&#x3A7;</span></li>
+                <li>
+                    <a href="./index.html#me">Alejandro Valtierra</a>
+                    <ul>
+                        <li class="sub-list"><a href="./index.html#biography">Biografía</a></li>
+                        <li class="sub-list"><a href="./index.html#structure">Estructura del portfolio</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="./diaries.html#development-diaries">Diarios de desarrollo</a>
+                    <ul>
+                        <li class="sub-list"><a href="./diaries.html#sql">SQL</a></li>
+                        <li class="sub-list"><a href="./diaries.html#html-and-css">HTML y CSS</a></li>
+                        <li class="sub-list"><a href="./diaries.html#python">Python</a></li>
+                        <li class="sub-list"><a href="./diaries.html#c">C++</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#works">Trabajos</a>
+                    <ul>
+                        <li class="sub-list"><a href="#dungeon-guide">Guía de la mazmorra</a></li>
+                        <li class="sub-list"><a href="#talking-recursively">Hablando recursivo</a></li>
+                        <li class="sub-list"><a href="#saving-passwords">Guardando contraseñas</a></li>
+                        <li class="sub-list"><a href="#paper-and-newspaper">Papel y periódico</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <button id="sideNavButton" type="button"><span>&gt;</span></button>
+        </nav>
+        <main>
+            <section>
+                <h1 id="works">Trabajos</h1>
+                <p class="text">¡Hola! En esta sección vas a encontrar algunos de los trabajos que he realizado, son algunos de mis favoritos. Algunos han sido en empresas en las que he sido empleado, así que no puedo desvelar demasiado ni poner el enlace a GitHub, pero pondré el enlace a la empresa.</p>
+                <article>
+                    <h2 id="dungeon-guide">Guía de la mazmorra</h2>
+                    <p class="text">Enlace al proyecto: <a href="https://github.com/AlejandroVLDev/MyCompendy" target="_blank">GitHub - MyCompendy</a></p>
+                    <p class="text">Este es un proyecto personal que voy actualizando poco a poco basado en Python, con el <i>framework</i> Django para crear la estructura del servidor. Dado que una de mis aficiones es el rol quería crear un compendio donde pueda tener todos los datos que utilizo para mis partidas en un solo lugar. De esta forma podré tener accesibles todas mis aventuras, hojas de personaje, enemigos, objetos, objetos mágicos, etc. De forma accesible durante las partidas. Como quiero que pueda contener múltiples juegos de rol en conjunto, como pueden ser D&D o mago la ascensión. De momento he comenzado con un diseño modular de aplicaciones globales, como pueden ser los dados y otro personalizados para cada juego de rol, como pueden ser los monstruos y los objetos. También he decidido que para manejarlo voy a utilizar un sistema estilo carpetas y ficheros, en el que se unirán las cosas y así pueda ser más visual y sencillo. De momento estoy creando los objetos y plantenado la arquitectura mientras utilizo la interfaz de admin para gestionar la base de datos, por ejemplo mis aventuras las guardo en formato markdown y las renderizo en HTML, aunque en algún momento utilizaré un formato similar a markdown pero con alguna personalización adicional para poder tener más control sobre le fichero. Además de cara al futuro pretendo crear una interfaz interesante y no relegar la creación y actualización al admin. También estoy valorando crear mi propio sistema de mapas con tiradas en tiempo real solo con pulsar en los distintos ataques y que esto haga que se pueda automatizar los puntos de salud, estados alterados y visión de los personajes de forma muy sencilla, algo que no he visot que haga nadie, pero tengo muchas ganas del reto y tengo muchas ideas ya para resolver problemas que se que voy a encontrar.</p>
+                </article>
+                <article>
+                    <h2 id="talking-recursively">Hablando recursivo</h2>
+                    <p class="text">Enlace al proyecto: <a href="#" target="_blank">GitHub - TalkingRecursively</a></p>
+                    <p class="text">Enlace al TFG: <a href="#" target="_blank">#</a></p>
+                    <p class="text">Este proyecto es un proyecto que hice para uno de mis TFG. Dado que estaba trabajando a la par que lo hacía, se me complicó el poder dedicarle todo el tiempo que querría, además de que fue mi primer proyecto usando Django, desde entonces he aprendido mucho y tengo muchísimas ideas para mejorarlo. De primeras tengo intención de actualizar la interfaz gráfica para que sea más profesional, además de utilizar animaciones más especificas para demostrar el comportamiento de las funciones, aunque mantendré la estructura de pasos para que se tenga una visión global. Ademas, voy a implementar un sistema de creación de nuevos ejercicios de modo que no tengan que hacerse desde backend, en el cual será un sistema estructurado con bloques especificos para las preguntas, respuestas y división en forma de árbol para poder incluirlo. Además quiero meter un módulo de ejercicios como desafíos de tiempo limitado que rote para ampliar la gamificación. También tengo que seguir valorando y conseguir feedback sobre una implementación que me parece muy intersante sobre estos desafios, añadiendo un sistema de puntos que funcione en cuanto al tiempo de resolución, incluyendo el tiempo en la aplicación y el tiempo total desde que lo leyó la primera vez, con objetivo de generar competitividad para que intenten mejorar en sus habilidades y demostrar de lo que son capaces, tal vez sería interesante utilizar un sistema que no enseñe la calificación, pero que te indique en que porcentaje estás sobre el resto de usuarios, así no se verían directamente el de los demás pero si que podría ser como satisfacción personal, guardando además la mejor posición y porcentaje de cuando se realizo y la actual.</p>
+                </article>
+                <article>
+                    <h2 id="saving-passwords">Guardando contraseñas</h2>
+                    <p class="text">Enlace al TFG: <a href="#" target="_blank">#</a></p>
+                    <p class="text"></p>
+                </article>
+                <article>
+                    <h2 id="paper-and-newspaper">Papel y periódico</h2>
+                    <p class="text"></p>
+                </article>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <div id="useful-data">
+            <section class="images first">
+                <img src="./static/icons/madeline.ico" class="game-icon first" alt="Madeline (Celeste video game) idle animation">
+                <img src="./static/icons/rathalos.ico" class="game-icon last" alt="Rathalos (Monster Hunter video game) sprite">
+            </section>
+            <section class="data">
+                <div>
+                    <h3>Enlaces</h3>
+                    <p><a href="https://es.linkedin.com/in/alejandro-valtierra-banos-9224932a8" target="_blank"><img src="./static/icons/linkedin.png" class="icon" alt="Linkedin icon"> Linkedin</a></p>
+                    <p><a href="https://github.com/AlejandroVLDev" target="_blank"><img src="./static/icons/github.png" class="icon" alt="GitHub icon"> GitHub</a></p>
+                </div>
+                <div>
+                    <h3>Imágenes</h3>
+                    <p><a href="./claims.html" target="_blank">Derechos</a></p>
+                </div>
+            </section>
+            <section class="images last">
+                <img src="./static/icons/mago_oscuro.ico" class="game-icon first" alt="dark mage (Final Fantasy video game) sprite">
+                <img src="./static/icons/pikachu.ico" class="game-icon last" alt="Pikachu (Pokemon video game) sprite">
+            </section>
+        </div>
+        <section class="copyright">© Copyright 2025 Alejandro Valtierra. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</section>
+    </footer>
+</body>
+</html>
