@@ -1,5 +1,7 @@
 ## Hi there 👋
 
+This is my portfolio, I'm Alejandro Valtierra, a software developer from Spain. If you want to see it click [here](https://alejandrovldev.github.io/).
+
 <!--
 **AlejandroVLDev/AlejandroVLDev** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
