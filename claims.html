@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alejandro Valtierra | Portfolio</title>
+    <title>Derechos | Alejandro Valtierra Portfolio</title>
     <link rel="stylesheet" href="static/styles/base.css">
+    <link rel="stylesheet" href="static/styles/claims.css">
     <script src="static/scripts/base.js" defer></script>
     <script src="static/scripts/canvas.js" defer></script>
 </head>
@@ -24,28 +25,98 @@
     </div>
 
     <div class="main-view">
-        <h1>Agradecimientos</h1>
+        <nav id="nav">
+            <ul id="mainList">
+                <li class="cross-space"><span id="cross">&#x3A7;</span></li>
+                <li><a href="./index.html">Página principal</a></li>
+                <li>
+                    <a href="#thanks">Agradecimientos</a>
+                    <ul>
+                        <li class="sub-list"><a href="#images">Imágenes</a></li>
+                        <li class="sub-list"><a href="#icons">Iconos</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <button id="sideNavButton" type="button"><span>&gt;</span></button>
+        </nav>
+        <main>
+            <h1 id="thanks">Agradecimientos</h1>
+            <h2 id="images">Imágenes</h2>
+            <div class="claim">
+                <h3>Madeline</h3>
+                <div class="claim-subdivision">
+                    <img src="./static/icons/madeline.ico" class="game-icon" alt="Madeline (Celeste video game) idle animation">
+                    <p class="text">Subido por <a target="_blank" href="https://celestegame.fandom.com/wiki/User:SendyBans">SendyBans</a> se puede encontrar <a target="_blank" href="https://celestegame.fandom.com/wiki/Madeline">aquí</a>.</p>
+                </div>
+            </div>
+            <div class="claim">
+                <h3>Rathalos</h3>
+                <div class="claim-subdivision">
+                    <img src="./static/icons/rathalos.ico" class="game-icon" alt="Rathalos (Monster Hunter video game) sprite">
+                    <p class="text">Subido por <a target="_blank" href="https://www.pixilart.com/connorhop1104">connorhop1104</a> se puede encontrar <a target="_blank" href="https://www.pixilart.com/photo/rathalos-24c426bfaf8c295">aquí</a>.</p>
+                </div>
+            </div>
+            <div class="claim">
+                <h3>Dark Mage</h3>
+                <div class="claim-subdivision">
+                    <img src="./static/icons/mago_oscuro.ico" class="game-icon" alt="dark mage (Final Fantasy video game) sprite">
+                    <p class="text">Subido por <a target="_blank" href="https://www.square-enix-games.com/es_ES/home">Square Enix</a> se puede encontrar <a target="_blank" href="https://finalfantasypixelremaster.square-enix-games.com/en_GB/">aquí</a>.</p>
+                </div>
+            </div>
+            <div class="claim">
+                <h3>Pikachu</h3>
+                <div class="claim-subdivision">
+                    <img src="./static/icons/pikachu.ico" class="game-icon" alt="Pikachu (Pokemon video game) sprite">
+                    <p class="text">Subido por <a target="_blank" href="https://www.reddit.com/r/PixelArt/">PixelArt</a> se puede encontrar <a target="_blank" href="https://www.reddit.com/r/PixelArt/comments/fyhxws/just_a_pixel_art_pikachu_i_made_stay_tuned_for/">aquí</a>.</p>
+                </div>
+            </div>
+            <h2 id="icons">Iconos</h2>
+            <div class="claim">
+                <h3>Computador</h3>
+                <div class="claim-subdivision">
+                    <img class="game-icon" src="./static/icons/pc.png" alt="Pantalla de computador con una color verde de fondo y los literales '> _' en blanco en el medio del cristal.">
+                    <p class="text">Imagen de <a target="_blank" href="https://pixabay.com/es/users/openicons-28911/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=97893">OpenIcons</a> en <a target="_blank" href="https://pixabay.com/es//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=97893">Pixabay</a>.</p>
+                </div>
+            </div>
+            <div class="claim">
+                <h3>España</h3>
+                <div class="claim-subdivision">
+                    <img class="game-icon" src="./static/icons/spain.png" alt="Mapa de España sin las Islas Canarias y coloreado con la bandera de España y el escudo en la franja amarilla.">
+                    <p class="text">Imagen de <a target="_blank" href="https://pixabay.com/es/users/gdj-1086657/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1758851">Gordon Johnson</a> en <a target="_blank" href="https://pixabay.com/es//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1758851">Pixabay</a>.</p>
+                </div>
+            </div>
+            <div class="claim">
+                <h3>Estrella rellena</h3>
+                <div class="claim-subdivision">
+                    <img class="game-icon" src="./static/icons/star.png" alt="Estrella pintada de amarillo">
+                    <p class="text">Imagen de <a href="https://pixabay.com/es/users/openclipart-vectors-30363/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=152151">OpenClipart-Vectors</a> en <a href="https://pixabay.com/es//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=152151">Pixabay</a>.</p>
+                </div>
+            </div>
+            <div class="claim">
+                <h3>Estrella vacia</h3>
+                <div class="claim-subdivision">
+                    <img class="game-icon" src="./static/icons/empty_star.png" alt="Estrella con borde negro sin relleno">
+                    <p class="text">Imagen de <a href="https://pixabay.com/es/users/openclipart-vectors-30363/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=152893">OpenClipart-Vectors</a> en <a href="https://pixabay.com/es//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=152893">Pixabay</a>.</p>
+                </div>
+            </div>
+        </main>
     </div>
 
     <footer>
         <div id="useful-data">
             <section class="images first">
-                <img src="./static/icons/madeline.ico" class="game-icon first"
-                    alt="Madeline (Celeste video game) idle animation">
-                <img src="./static/icons/rathalos.ico" class="game-icon last"
-                    alt="Rathalos (Monster Hunter video game) sprite">
+                <img src="./static/icons/madeline.ico" class="game-icon first" alt="Madeline (Celeste video game) idle animation">
+                <img src="./static/icons/rathalos.ico" class="game-icon last" alt="Rathalos (Monster Hunter video game) sprite">
             </section>
             <section class="data">
                 <div>
                     <h3>Enlaces</h3>
-                    <p><a href="#" target="_blank"><img src="./static/icons/linkedin.png" class="icon" alt="Linkedin icon">
-                            Linkedin</a></p>
-                    <p><a href="#" target="_blank"><img src="./static/icons/github.png" class="icon" alt="GitHub icon">
-                            GitHub</a></p>
+                    <p><a target="_blank" href="https://es.linkedin.com/in/alejandro-valtierra-banos-9224932a8" target="_blank"><img src="./static/icons/linkedin.png" class="icon" alt="Linkedin icon"> Linkedin</a></p>
+                    <p><a target="_blank" href="https://github.com/AlejandroVLDev" target="_blank"><img src="./static/icons/github.png" class="icon" alt="GitHub icon"> GitHub</a></p>
                 </div>
                 <div>
                     <h3>Imágenes</h3>
-                    <p><a href="#" target="_blank">Derechos</a></p>
+                    <p><a href="#">Derechos</a></p>
                 </div>
             </section>
             <section class="images last">
@@ -54,7 +125,8 @@
                 <img src="./static/icons/pikachu.ico" class="game-icon last" alt="Pikachu (Pokemon video game) sprite">
             </section>
         </div>
-        <section class="copyright">© Copyright 2025 Alejandro Valtierra. Hosted by <a href="https://pages.github.com/"
+        <section class="copyright">© Copyright 2025 Alejandro Valtierra. Hosted by <a target="_blank" href="https://pages.github.com/"
                 target="_blank">GitHub Pages</a>.</section>
     </footer>
 </body>
+</html>

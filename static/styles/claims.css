@@ -1,0 +1,9 @@
+/* claims */
+.claim {
+    margin: 1em;
+}
+
+.claim:hover .game-icon {
+    transform: rotate(360deg);
+    transition: transform 0.5s ease;
+}
