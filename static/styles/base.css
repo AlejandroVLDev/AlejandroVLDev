@@ -96,6 +96,7 @@ thead {
 .main-view {
     display: flex;
     flex: 1;
+    margin-bottom: 1.5em;
 }
 
 /* nav */
@@ -187,7 +188,7 @@ footer .data {
 }
 
 .icon {
-    height: 1rem;
+    height: 1em;
     width: auto;
 }
 
@@ -326,6 +327,9 @@ button:hover {
 
 /* PHONE */
 @media only screen and (max-width: 800px) {
+    body {
+        font-size: 0.8em;
+    }
     /* nav */
     nav {
         width: 100%;
@@ -420,8 +424,13 @@ button:hover {
     .text-and-image {
         flex-direction: column;
     }
+
     .image-part div {
         max-width: 136px;
+    }
+
+    img.icon {
+        height: 0.8em;
     }
 
 }
